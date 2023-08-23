@@ -39,6 +39,14 @@
       display: flex;
       justify-content: center;
     }
+  
+      .new_prose {
+        background-color: #ececec;
+        padding: 10px;
+        border-radius: 10px;
+      }
+     
+  
   }
 </style>
 
@@ -69,7 +77,7 @@
               </div>
           {% endcase %}
         {% endfor %}
-        <div class="prose">
+        <div class="new_prose">
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when 'subheading' -%}
@@ -113,7 +121,6 @@
 {% style %}
   @media screen and (max-width: 768px) {
     .prose {
-      background-color: {{ section.settings.background_text_color }};
       padding: 10px;
       border-radius: 10px;
     }

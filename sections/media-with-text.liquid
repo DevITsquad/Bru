@@ -68,6 +68,19 @@ CSS
     display: flex;
     column-gap: 24px;
   }
+  @media screen and (max-width: 700px) {
+    .main__heading  {
+      margin-top: 30px;
+      font-size: 26px;
+    }
+  
+  }
+  @media screen and (max-width: 440px) {
+    .shopify-section--media-with-text .section  {
+     margin: 0 !important;
+    }
+  }
+
 </style>
 
 {%- comment -%}
@@ -170,19 +183,31 @@ LIQUID
               {%- endif -%}
             </div>
 
-
+            {%style%}
+            @media screen and (max-width:480px) {
+              .blockId--{{block.id}}.mobile_size_subheading{
+                font-size:{{block.settings.subheading_mobile_text_size}}px !important;
+              }
+              .blockId--{{block.id}}.mobile_size_title{
+                font-size:{{block.settings.title_mobile_text_size}}px !important;
+              }
+              .blockId--{{block.id}}.mobile_size_content p{
+                font-size:{{block.settings.content_mobile_text_size}}px !important;
+              }
+            }
+          {%endstyle%}
             {%- if block.settings.subheading != blank -%}
-              <p class="new-font__subheading bold">{{ block.settings.subheading | escape }}</p>
+           <p  class="blockId--{{block.id}} mobile_size_subheading new-font__subheading bold">{{ block.settings.subheading | escape }}</p>
             {%- endif -%}
 
             {%- if block.settings.title != blank -%}
-              <p class="new-font__h2 h2">
+              <p class="blockId--{{block.id}} mobile_size_title new-font__h2 h2">
                 {%- render 'styled-text', content: block.settings.title, gradient: block.settings.text_gradient -%}
               </p>
             {%- endif -%}
-
+            <div class="blockId--{{block.id}} mobile_size_content">
             {{- block.settings.content -}}
-
+            </div>
             {%- if block.settings.link_text != blank -%}
               {%- render 'button', href: block.settings.link_url, content: block.settings.link_text, size: 'xl', background: block.settings.button_background, text_color: block.settings.button_text_color -%}
             {%- endif -%}
@@ -569,17 +594,50 @@ LIQUID
             "type": "text",
             "id": "subheading",
             "label": "Subheading"
-          }, {
+          },
+          {
+            "type": "range",
+            "id": "subheading_mobile_text_size",
+            "label": "subheading mobile text size",
+            "min": 10,
+            "max": 60,
+            "step": 1,
+            "unit": "px",
+            "default":16
+          },
+          {
             "type": "text",
             "id": "title",
             "label": "Heading",
             "default": "Heading"
-          }, {
+          },
+          {
+            "type": "range",
+            "id": "title_mobile_text_size",
+            "label": "Heading mobile text size",
+            "min": 10,
+            "max": 60,
+            "step": 1,
+            "unit": "px",
+            "default":20
+          },
+          {
             "type": "richtext",
             "id": "content",
             "label": "Content",
             "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-          }, {
+          }, 
+          {
+            "type": "range",
+            "id": "content_mobile_text_size",
+            "label": "content mobile text size",
+            "min": 10,
+            "max": 60,
+            "step": 1,
+            "unit": "px",
+            "default":16
+          },
+          {
             "type": "text",
             "id": "link_text",
             "label": "Button text"

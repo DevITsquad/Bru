@@ -228,4 +228,7 @@
     .content__item:nth-child(2n) .story__content{
         bottom: 10%;
     }
+    .video-stories__wrapper{
+        margin-top:0;
+    }
 }

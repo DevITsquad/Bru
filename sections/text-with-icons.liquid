@@ -46,6 +46,16 @@
         }
       }
     {%- endif -%}
+
+
+    .header_image_wrapper{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+     
+    
   </style>
 
   <div {% render 'section-properties' %}>
@@ -57,10 +67,15 @@
       {%- endif -%}
 
       <div class="text-with-icons">
+        {%- if section.settings.custom_mobile_icon -%}
+          <div class="header_image_wrapper"> <img src="{{section.settings.custom_mobile_icon | image_url}}" alt="img"></div>
+        {%- endif -%}
+       
         <scroll-carousel
           class="text-with-icons__list scroll-area full-bleed {% if section.blocks.size <= 3 %}md:unbleed{% else %}lg:unbleed{% endif %}"
           id="carousel-{{ section.id }}"
           role="region">
+          
           {%- for block in section.blocks -%}
             <div
               id="block-{{ section.id }}-{{ block.id }}"
@@ -98,7 +113,7 @@
               {%- endif -%}
 
               <div class="text-with-icons__text-wrapper">
-                <div class="prose">
+                <div>
                   {%- if block.settings.title != blank -%}
                     <p style="font-weight:700; font-size: 24px;" class="{{ section.settings.heading_tag }}">{{ block.settings.title | escape }}</p>
                   {%- endif -%}
@@ -442,6 +457,11 @@
         "max": 80,
         "step": 5,
         "default": 0
+      },
+      {
+        "type": "image_picker",
+        "id": "custom_mobile_icon",
+        "label": "mobile header icon"
       },
       {
         "type": "checkbox",
