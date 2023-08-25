@@ -4,7 +4,14 @@ function toggleView(e) {
         console.log('e.currentTarget', e.currentTarget)
         e.currentTarget.classList.toggle('rotate')
         const ElementToHide = e.currentTarget.closest(".footer__block.footer__block--menu").querySelector('.toogle_vision')
-        ElementToHide.classList.toggle('hide_me')
+       
+        if (ElementToHide.style.maxHeight){
+            ElementToHide.style.maxHeight = null;
+          } else {
+            ElementToHide.style.maxHeight = ElementToHide.scrollHeight + "px";
+          }
+
+        // ElementToHide.classList.toggle('hide_me')
     }
 }
 
@@ -16,3 +23,4 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
 })
+
