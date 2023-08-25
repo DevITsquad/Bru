@@ -46,6 +46,15 @@
           font-size:{{block.settings.size_content}}px !important;
         }
 
+          @media screen and (max-width:768px){
+            .block--id--{{block.id}}.element-title.h4{
+              font-size:{{block.settings.size_title_tablet}}px !important;
+              
+            }
+            .block--id--{{block.id}}.element-content{
+              font-size:{{block.settings.size_content_tablet}}px !important;
+            }
+          }
           @media screen and (max-width:480px){
             .block--id--{{block.id}}.element-title.h4{
               font-size:{{block.settings.size_title_mobile}}px !important;
@@ -165,7 +174,17 @@
           "step": 1,
           "unit": "px",
           "label": "text size title mobile",
-          "default": 17
+          "default": 18
+        },
+         {
+          "type": "range",
+          "id": "size_title_tablet",
+          "min": 1,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "label": "text size title tablet",
+          "default": 16
         },
         {
           "type": "richtext",
@@ -209,13 +228,23 @@
         },
         {
           "type": "range",
+          "id": "size_content_tablet",
+          "min": 1,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "label": "text size content tablet",
+          "default": 15
+        },
+        {
+          "type": "range",
           "id": "size_content_mobile",
           "min": 1,
           "max": 60,
           "step": 1,
           "unit": "px",
           "label": "text size content mobile",
-          "default": 15
+          "default": 13
         },
         {
           "type": "select",
