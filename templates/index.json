@@ -7,7 +7,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/Image_2800x1000_-White.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/grafik_1.png",
+            "mobile_image": "shopify:\/\/shop_images\/Snag_c1ea6bf.png",
             "content_max_width": 420,
             "mobile_text_position": "place-self-center-start text-start",
             "desktop_text_position": "sm:place-self-center-start sm:text-start",
@@ -647,7 +647,7 @@
             "icon": "none",
             "icon_width": 48,
             "subheading": "Tradition und Innovation vereint",
-            "subheading_mobile_text_size": 16,
+            "subheading_mobile_text_size": 24,
             "title": "BRU Maker One –  Ein Muss für wahre Tee-Liebhaber",
             "title_mobile_text_size": 20,
             "content": "<p>Bei BRU schätzen wir die Tradition, jeden Tee mit der optimalen Temperatur und Zeit aufzubrühen und haben diesen Vorgang ganz einfach automatisiert. <br\/><br\/>Die <strong>individuell einstellbare Wassertemperatur und Brühzeit<\/strong> ermöglichen dir authentischen und geschmackvollen Teegenuss.<\/p>",
