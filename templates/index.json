@@ -938,8 +938,8 @@
       "settings": {
         "button__link": "shopify:\/\/pages\/help",
         "button__label": "ALLE FRAGEN",
-        "margin__bottom": 40,
-        "margin__top": 0
+        "margin__bottom": 30,
+        "margin__top": 15
       }
     },
     "fc3626ae-f131-486a-8746-90b7185db28d": {
